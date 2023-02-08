@@ -1,5 +1,20 @@
-function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
-}
+import Input from "./components/input";
 
-export default App;
+export default function App() {
+  return (
+    <main className="mt-16 flex justify-center gap-x-8">
+      <Input
+        label="Celsius"
+        handleChange={() => {
+          console.log("Celsius changed");
+        }}
+      />
+      <Input
+        label="Fahrenheit"
+        handleChange={() => {
+          console.log("Fahrenheit changed");
+        }}
+      />
+    </main>
+  );
+}
