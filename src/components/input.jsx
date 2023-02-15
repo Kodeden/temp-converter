@@ -4,7 +4,7 @@ export default function Input({ label, handleChange }) {
   return (
     <>
       <label htmlFor={label.toLowerCase()} className="sr-only">
-        Input
+        {label}
       </label>
       <input
         id={label.toLowerCase()}
