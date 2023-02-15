@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Input({ label, handleChange }) {
+export default function Input({ label, value, handleChange }) {
   return (
     <>
       <label htmlFor={label.toLowerCase()} className="sr-only">
@@ -12,6 +12,7 @@ export default function Input({ label, handleChange }) {
         onChange={handleChange}
         className="rounded shadow"
         placeholder={label}
+        value={value}
       />
     </>
   );
@@ -19,5 +20,6 @@ export default function Input({ label, handleChange }) {
 
 Input.propTypes = {
   label: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
 };

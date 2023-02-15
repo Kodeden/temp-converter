@@ -1,20 +1,29 @@
+import { useState } from "react";
 import Input from "./components/input";
+import { tryConvert } from "./utils/convert-temp";
 
 export default function App() {
+  const [celsius, setCelsius] = useState(0);
+  const [fahrenheit, setFahrenheit] = useState(0);
+
   return (
-    <main className="mt-16 flex justify-center gap-x-8">
+    <form className="mt-16 flex justify-center gap-x-8">
       <Input
         label="Celsius"
-        handleChange={() => {
-          console.log("Celsius changed");
+        value={celsius}
+        handleChange={(event) => {
+          setCelsius(event.target.value);
+          setFahrenheit(tryConvert(event.target.value, "convert2Fahrenheit"));
         }}
       />
       <Input
         label="Fahrenheit"
+        value={fahrenheit}
         handleChange={() => {
-          console.log("Fahrenheit changed");
+          setFahrenheit(event.target.value);
+          setCelsius(tryConvert(event.target.value, "convert2Celsius"));
         }}
       />
-    </main>
+    </form>
   );
 }

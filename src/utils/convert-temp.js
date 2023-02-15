@@ -8,7 +8,7 @@ const conversions = {
   },
 };
 
-export default function tryConvert(temperature, conversion) {
+export function tryConvert(temperature, conversion) {
   // If the input is not a valid number, return an empty string.
   const input = parseFloat(temperature);
   if (Number.isNaN(input)) {
