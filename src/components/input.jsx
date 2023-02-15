@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export default function Input({ label, value, handleChange }) {
   return (
-    <>
+    <div>
       <label htmlFor={label.toLowerCase()} className="sr-only">
         {label}
       </label>
@@ -14,7 +14,7 @@ export default function Input({ label, value, handleChange }) {
         placeholder={label}
         value={value}
       />
-    </>
+    </div>
   );
 }
 
