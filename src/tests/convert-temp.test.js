@@ -1,4 +1,4 @@
-import tryConvert from "../utils/convert-temp";
+import { tryConvert } from "../utils/convert-temp";
 
 describe("tryConvert", () => {
   it("should covert 32F to 0C", () => {
