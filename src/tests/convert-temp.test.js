@@ -15,18 +15,18 @@ describe("tryConvert", () => {
     expect(actual).toBe(expected);
   });
 
-  it("should covert 212F to 100C", () => {
+  it("should covert 200F to be approximately 93.333C", () => {
     // Arrange
-    const input = "212";
+    const input = "200";
     const conversion = "convert2Celsius";
 
-    const expected = "100";
+    const expected = "93.333";
 
     // Act
     const actual = tryConvert(input, conversion);
 
     // Assert
-    expect(actual).toBe(expected);
+    expect(actual).toBeCloseTo(expected);
   });
 
   it("should covert 0C to 32F", () => {
