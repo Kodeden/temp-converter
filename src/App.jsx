@@ -19,7 +19,7 @@ export default function App() {
       <Input
         label="Fahrenheit"
         value={fahrenheit}
-        handleChange={() => {
+        handleChange={(event) => {
           setFahrenheit(event.target.value);
           setCelsius(tryConvert(event.target.value, "convert2Celsius"));
         }}
