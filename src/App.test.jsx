@@ -3,11 +3,18 @@ import userEvent from "@testing-library/user-event";
 import { expect } from "vitest";
 import App from "./App";
 
+function setup() {
+  return {
+    user: userEvent.setup(),
+    ...render(<App />),
+  };
+}
+
 it("converts °C to °F", async () => {
-  render(<App />);
+  const { user } = setup();
+
   const inputCelsius = screen.getByLabelText(/Celsius/i);
   const inputFahrenheit = screen.getByLabelText(/Fahrenheit/i);
-  const user = userEvent.setup();
 
   await user.type(inputCelsius, "100");
 
@@ -15,10 +22,10 @@ it("converts °C to °F", async () => {
 });
 
 it("converts °F to °C", async () => {
-  render(<App />);
+  const { user } = setup();
+
   const inputCelsius = screen.getByLabelText(/Celsius/i);
   const inputFahrenheit = screen.getByLabelText(/Fahrenheit/i);
-  const user = userEvent.setup();
 
   await user.type(inputFahrenheit, "212");
 
